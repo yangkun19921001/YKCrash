@@ -19,11 +19,17 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-        String nativePath = Environment.getExternalStorageDirectory() + "/T01/native/";
+        String nativePath = Environment.getExternalStorageDirectory() + "/T01/nativeCrash/";
         File natPath = new File(nativePath);
         if (!natPath.exists())
             natPath.mkdirs();
-        CrashUtils.initCrash(nativePath);
+
+        String javaPath = Environment.getExternalStorageDirectory() + "/T01/javaCrash/";
+        File javPath = new File(javaPath);
+        if (!javPath.exists())
+            javPath.mkdirs();
+
+        CrashUtils.initNativeCrash(getApplicationContext(), nativePath);
 
     }
 

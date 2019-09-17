@@ -22,18 +22,7 @@ bool DumpCallback(const google_breakpad::MinidumpDescriptor &descriptor,
     return succeeded;
 }
 
-extern "C"
-JNIEXPORT void JNICALL
-Java_com_devyk_crash_1module_CrashUtils_initBreakpadNative(JNIEnv *env, jclass type,
-                                                           jstring path_) {
-    const char *path = env->GetStringUTFChars(path_, 0);
 
-    // TODO
-    google_breakpad::MinidumpDescriptor descriptor(path);
-    static google_breakpad::ExceptionHandler eh(descriptor, NULL, DumpCallback, NULL, true, -1);
-
-    env->ReleaseStringUTFChars(path_, path);
-}
 
 JNIEXPORT jint JNICALL JNI_OnLoad(JavaVM *vm, void *reserved) {
     JNIEnv *env;
@@ -43,3 +32,14 @@ JNIEXPORT jint JNICALL JNI_OnLoad(JavaVM *vm, void *reserved) {
     return JNI_VERSION_1_6;
 }
 
+extern "C"
+JNIEXPORT void JNICALL
+Java_com_devyk_crash_1module_inter_NativeCrashImp_initBreakpadNative(JNIEnv *env, jclass type,
+                                                                     jstring path_) {
+    const char *path = env->GetStringUTFChars(path_, 0);
+
+    // TODO
+    google_breakpad::MinidumpDescriptor descriptor(path);
+    static google_breakpad::ExceptionHandler eh(descriptor, NULL, DumpCallback, NULL, true, -1);
+    env->ReleaseStringUTFChars(path_, path);
+}
