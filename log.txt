@@ -1,0 +1,35 @@
+Build command failed.
+Error while executing process /Users/devyk/Data/Android/SDK/cmake/3.6.4111459/bin/cmake with arguments {--build /Users/devyk/Data/Project/sample/github_code/YKCrash/crash_build/.externalNativeBuild/cmake/debug/x86 --target breakpad-core}
+[1/23] Building CXX object libbreakpad/CMakeFiles/breakpad.dir/src/client/linux/crash_generation/crash_generation_client.cc.o
+[2/23] Building CXX object libbreakpad/CMakeFiles/breakpad.dir/src/client/linux/dump_writer_common/thread_info.cc.o
+[3/23] Building CXX object libbreakpad/CMakeFiles/breakpad.dir/src/client/linux/dump_writer_common/ucontext_reader.cc.o
+[4/23] Building CXX object libbreakpad/CMakeFiles/breakpad.dir/src/client/linux/handler/exception_handler.cc.o
+[5/23] Building CXX object libbreakpad/CMakeFiles/breakpad.dir/src/client/linux/handler/minidump_descriptor.cc.o
+[6/23] Building CXX object libbreakpad/CMakeFiles/breakpad.dir/src/client/linux/log/log.cc.o
+[7/23] Building CXX object libbreakpad/CMakeFiles/breakpad.dir/src/client/linux/microdump_writer/microdump_writer.cc.o
+[8/23] Building CXX object libbreakpad/CMakeFiles/breakpad.dir/src/client/linux/minidump_writer/linux_dumper.cc.o
+[9/23] Building CXX object libbreakpad/CMakeFiles/breakpad.dir/src/client/linux/minidump_writer/linux_ptrace_dumper.cc.o
+[10/23] Building CXX object libbreakpad/CMakeFiles/breakpad.dir/src/client/linux/minidump_writer/minidump_writer.cc.o
+[11/23] Building CXX object libbreakpad/CMakeFiles/breakpad.dir/src/client/minidump_file_writer.cc.o
+[12/23] Building CXX object libbreakpad/CMakeFiles/breakpad.dir/src/common/md5.cc.o
+[13/23] Building CXX object libbreakpad/CMakeFiles/breakpad.dir/src/common/string_conversion.cc.o
+[14/23] Building CXX object libbreakpad/CMakeFiles/breakpad.dir/src/common/linux/elfutils.cc.o
+[15/23] Building CXX object libbreakpad/CMakeFiles/breakpad.dir/src/common/linux/file_id.cc.o
+[16/23] Building CXX object libbreakpad/CMakeFiles/breakpad.dir/src/common/linux/guid_creator.cc.o
+[17/23] Building CXX object libbreakpad/CMakeFiles/breakpad.dir/src/common/linux/linux_libc_support.cc.o
+[18/23] Building CXX object libbreakpad/CMakeFiles/breakpad.dir/src/common/linux/memory_mapped_file.cc.o
+[19/23] Building CXX object libbreakpad/CMakeFiles/breakpad.dir/src/common/linux/safe_readlink.cc.o
+[20/23] Building C object libbreakpad/CMakeFiles/breakpad.dir/src/common/android/breakpad_getcontext.S.o
+[21/23] Linking CXX static library libbreakpad/libbreakpad.a
+[22/23] Building CXX object CMakeFiles/breakpad-core.dir/breakpad.cpp.o
+[23/23] Linking CXX shared library /Users/devyk/Data/Project/sample/github_code/YKCrash/crash_build/build/intermediates/cmake/debug/obj/x86/libbreakpad-core.so
+FAILED: : && /Users/devyk/Data/Android/NDK/android-ndk-r17c/toolchains/llvm/prebuilt/darwin-x86_64/bin/clang++  --target=i686-none-linux-android --gcc-toolchain=/Users/devyk/Data/Android/NDK/android-ndk-r17c/toolchains/x86-4.9/prebuilt/darwin-x86_64 --sysroot=/Users/devyk/Data/Android/NDK/android-ndk-r17c/sysroot -fPIC -isystem /Users/devyk/Data/Android/NDK/android-ndk-r17c/sysroot/usr/include/i686-linux-android -D__ANDROID_API__=14 -g -DANDROID -ffunction-sections -funwind-tables -fstack-protector-strong -no-canonical-prefixes -mstackrealign -Wa,--noexecstack -Wformat -Werror=format-security -std=c++11 -std=c++11 -std=c++11  -O0 -fno-limit-debug-info  -Wl,--exclude-libs,libgcc.a -Wl,--exclude-libs,libatomic.a -nostdlib++ --sysroot /Users/devyk/Data/Android/NDK/android-ndk-r17c/platforms/android-14/arch-x86 -Wl,--build-id -Wl,--warn-shared-textrel -Wl,--fatal-warnings -L/Users/devyk/Data/Android/NDK/android-ndk-r17c/sources/cxx-stl/llvm-libc++/libs/x86 -Wl,--no-undefined -Wl,-z,noexecstack -Qunused-arguments -Wl,-z,relro -Wl,-z,now -shared -Wl,-soname,libbreakpad-core.so -o /Users/devyk/Data/Project/sample/github_code/YKCrash/crash_build/build/intermediates/cmake/debug/obj/x86/libbreakpad-core.so CMakeFiles/breakpad-core.dir/breakpad.cpp.o  libbreakpad/libbreakpad.a -llog -latomic -lm "/Users/devyk/Data/Android/NDK/android-ndk-r17c/sources/cxx-stl/llvm-libc++/libs/x86/libc++_static.a" "/Users/devyk/Data/Android/NDK/android-ndk-r17c/sources/cxx-stl/llvm-libc++/libs/x86/libc++abi.a" "/Users/devyk/Data/Android/NDK/android-ndk-r17c/sources/cxx-stl/llvm-libc++/libs/x86/libandroid_support.a" && :
+/Users/devyk/Data/Project/sample/github_code/YKCrash/crash_build/src/main/cpp/libbreakpad/src/common/string_conversion.cc:50: error: undefined reference to 'google_breakpad::ConvertUTF8toUTF16(unsigned char const**, unsigned char const*, unsigned short**, unsigned short*, google_breakpad::ConversionFlags)'
+/Users/devyk/Data/Project/sample/github_code/YKCrash/crash_build/src/main/cpp/libbreakpad/src/common/string_conversion.cc:67: error: undefined reference to 'google_breakpad::ConvertUTF8toUTF16(unsigned char const**, unsigned char const*, unsigned short**, unsigned short*, google_breakpad::ConversionFlags)'
+/Users/devyk/Data/Project/sample/github_code/YKCrash/crash_build/src/main/cpp/libbreakpad/src/common/string_conversion.cc:94: error: undefined reference to 'google_breakpad::ConvertUTF32toUTF16(unsigned long const**, unsigned long const*, unsigned short**, unsigned short*, google_breakpad::ConversionFlags)'
+/Users/devyk/Data/Project/sample/github_code/YKCrash/crash_build/src/main/cpp/libbreakpad/src/common/string_conversion.cc:108: error: undefined reference to 'google_breakpad::ConvertUTF32toUTF16(unsigned long const**, unsigned long const*, unsigned short**, unsigned short*, google_breakpad::ConversionFlags)'
+/Users/devyk/Data/Project/sample/github_code/YKCrash/crash_build/src/main/cpp/libbreakpad/src/common/string_conversion.cc:143: error: undefined reference to 'google_breakpad::ConvertUTF16toUTF8(unsigned short const**, unsigned short const*, unsigned char**, unsigned char*, google_breakpad::ConversionFlags)'
+clang++: error: linker command failed with exit code 1 (use -v to see invocation)
+ninja: build stopped: subcommand failed.
+
+
