@@ -19,14 +19,20 @@ allprojects {
 //2. app/build.gradle
 
 	dependencies {
-	  implementation 'com.github.yangkun19921001:YKCrash:1.0.1'
+	  implementation 'com.github.yangkun19921001:YKCrash:1.0.2'
 	}
 ```
 
 ```java
 //3. application 中初始化
 //nativePath: 保存的 dmp 日志
-CrashUtils.initNativeCrash(getApplicationContext(), nativePath);
+//javaPath: 保存的 java 崩溃日志
+//onCrashListener:  java 崩溃监听回调
+//框架初始化
+new Crash.CrashBuild(getApplicationContext())
+                .nativeCrashPath(nativePath)
+                .javaCrashPath(javaPath, this)
+                .build();
 ```
 
 ## 产生崩溃的原因
