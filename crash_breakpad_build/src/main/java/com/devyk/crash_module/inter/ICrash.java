@@ -13,5 +13,6 @@ import android.content.Context;
  */
 public interface ICrash {
 
-    void init(Context context,String logPath);
+    void init(Context context, String logPath);
+
 }

@@ -2,8 +2,6 @@ package com.devyk.crash_module.inter;
 
 import android.content.Context;
 
-import com.devyk.crash_module.CrashUtils;
-
 /**
  * <pre>
  *     author  : devyk on 2019-09-18 01:30

@@ -35,6 +35,6 @@ dependencies {
     implementation fileTree(dir: 'libs', include: ['*.jar'])
     implementation rootProject.ext.dependencies["recyclerview-v7"]
     implementation rootProject.ext.dependencies["appcompat-v7"]
-//    implementation project(path: ':crash_breakpad_build')
-    implementation 'com.github.yangkun19921001:YKCrash:1.0.1'
+    implementation project(path: ':crash_breakpad_build')
+//    implementation 'com.github.yangkun19921001:YKCrash:1.0.1'
 }
