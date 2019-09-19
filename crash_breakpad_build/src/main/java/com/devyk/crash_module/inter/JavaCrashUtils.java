@@ -117,6 +117,10 @@ public class JavaCrashUtils implements Thread.UncaughtExceptionHandler {
      * @param ctx
      */
     public void collectDeviceInfo(Context ctx) {
+        // 避免重复取基础数据
+        if(infos.size()!=0){
+            return;
+        }
         try {
             PackageManager pm = ctx.getPackageManager();
             PackageInfo pi = pm.getPackageInfo(ctx.getPackageName(), PackageManager.GET_ACTIVITIES);
@@ -131,6 +135,17 @@ public class JavaCrashUtils implements Thread.UncaughtExceptionHandler {
         }
         Field[] fields = Build.class.getDeclaredFields();
         for (Field field : fields) {
+            try {
+                field.setAccessible(true);
+                infos.put(field.getName(), field.get(null).toString());
+                Log.d(TAG, field.getName() + " : " + field.get(null));
+            } catch (Exception e) {
+                Log.e(TAG, "an error occured when collect crash info", e);
+            }
+        }
+        // 增加android版本日志
+        Field[] versionFields = Build.VERSION.class.getDeclaredFields();
+        for (Field field : versionFields) {
             try {
                 field.setAccessible(true);
                 infos.put(field.getName(), field.get(null).toString());
