@@ -103,6 +103,7 @@ public class JavaCrashUtils implements Thread.UncaughtExceptionHandler {
         }
         //收集设备参数信息
         collectDeviceInfo(mContext);
+        Log.e(TAG,infos.toString());
         //保存日志文件
         String s = saveCrashInfo2File(ex);
         if (onCrash != null) {
@@ -133,6 +134,7 @@ public class JavaCrashUtils implements Thread.UncaughtExceptionHandler {
         } catch (PackageManager.NameNotFoundException e) {
             Log.e(TAG, "an error occured when collect package info", e);
         }
+
         Field[] fields = Build.class.getDeclaredFields();
         for (Field field : fields) {
             try {
@@ -143,17 +145,17 @@ public class JavaCrashUtils implements Thread.UncaughtExceptionHandler {
                 Log.e(TAG, "an error occured when collect crash info", e);
             }
         }
-        // 增加android版本日志
-        Field[] versionFields = Build.VERSION.class.getDeclaredFields();
-        for (Field field : versionFields) {
-            try {
-                field.setAccessible(true);
-                infos.put(field.getName(), field.get(null).toString());
-                Log.d(TAG, field.getName() + " : " + field.get(null));
-            } catch (Exception e) {
-                Log.e(TAG, "an error occured when collect crash info", e);
-            }
-        }
+        // 增加android版本日志, 不需要 上面已经几乎全部包括了
+//        Field[] versionFields = Build.VERSION.class.getDeclaredFields();
+//        for (Field field : versionFields) {
+//            try {
+//                field.setAccessible(true);
+//                infos.put(field.getName(), field.get(null).toString());
+//                Log.d(TAG, field.getName() + " : " + field.get(null));
+//            } catch (Exception e) {
+//                Log.e(TAG, "an error occured when collect crash info", e);
+//            }
+//        }
     }
 
     /**
